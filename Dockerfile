@@ -16,21 +16,21 @@ COPY package*.json ./
 RUN npm install -g npm@9.6.2 --save-exact
 
 # Copy the dependencies into a Slim Node docker image
-FROM node:19
+#FROM node:19.7
 
-WORKDIR "/app"
+#WORKDIR "/app"
 
 # Install OS updates
-RUN apt-get update \
- && apt-get dist-upgrade -y \
- && apt-get clean \
- && echo 'Finished installing dependencies'
+#RUN apt-get update \
+# && apt-get dist-upgrade -y \
+# && apt-get clean \
+# && echo 'Finished installing dependencies'
 
 # Install app dependencies
-COPY --from=0 /app/node_modules /app/node_modules
-COPY . /app
+#COPY --from=0 /app/node_modules /app/node_modules
+#COPY . /app
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 ENV PORT 30555
 
 
