@@ -13,7 +13,7 @@ RUN apt-get update \
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install -g npm@9.6.2
+RUN npm install -g npm@9.6.2 --save-exact
 
 # Copy the dependencies into a Slim Node docker image
 FROM node:19
