@@ -1,5 +1,5 @@
 # Install the app dependencies in a full Node docker image
-FROM node:19
+FROM node:19.7
 
 WORKDIR "/app"
 
