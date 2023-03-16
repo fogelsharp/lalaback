@@ -4,7 +4,7 @@
   "description": "LalaLand MERN app for Docker/Kubernetes",
   "private": true,
   "engines": {
-    "node": "^18.15.0"
+    "node": "^19.8.1"
   },
   "scripts": {
     "start": "node server/server.js",
