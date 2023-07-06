@@ -13,7 +13,7 @@ RUN apt-get update \
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install --production
+RUN npm install --omit=dev
 
 # Copy the dependencies into a Slim Node docker image
 FROM node:latest-slim
