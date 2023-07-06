@@ -1,5 +1,5 @@
 # Install the app dependencies in a full Node docker image
-FROM node:latest
+FROM node:16
 
 WORKDIR "/app"
 
@@ -17,7 +17,7 @@ RUN npm install -g npm@9.8.0
 RUN npm install --omit=dev
 
 # Copy the dependencies into a Slim Node docker image
-FROM node:latest-slim
+FROM node:16-slim
 
 WORKDIR "/app"
 
