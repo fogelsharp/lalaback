@@ -13,8 +13,7 @@ RUN apt-get update \
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install -g npm@9.8.0
-RUN npm install --omit=dev
+RUN npm install --production
 
 # Copy the dependencies into a Slim Node docker image
 FROM node:16-slim
@@ -34,6 +33,6 @@ COPY . /app
 ENV NODE_ENV production
 ENV PORT 30555
 
-
 EXPOSE 30555
-CMD ["npm", "start"]
+
+CMD ["node", "server/server.js"]
