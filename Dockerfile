@@ -1,5 +1,5 @@
 # Install the app dependencies in a full Node docker image
-FROM node:12
+FROM node:latest
 
 WORKDIR "/app"
 
@@ -16,7 +16,7 @@ COPY package*.json ./
 RUN npm install --production
 
 # Copy the dependencies into a Slim Node docker image
-FROM node:12-slim
+FROM node:latest-slim
 
 WORKDIR "/app"
 
